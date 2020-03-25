@@ -1,8 +1,8 @@
-﻿#find ud af om man er administrator lige nu
+﻿#Checks if script currently is administrator
 pause
 If (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator"))
 {
-#starer dette script som administrator, kan modificeres til at køre et andet script som administartor
+#Starts the script as administrator
 Start-Process powershell.exe $PSCommandPath -Verb runAs
 exit
 }
